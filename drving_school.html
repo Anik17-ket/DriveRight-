@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search Driving Schools - DriveRight</title>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Search for available driving schools in your area.">
+
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Font settings */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            padding: 1rem 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+
+        header nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Hero section */
+        #hero {
+            background-color: #5d9cec;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Search section */
+        #search-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #search-section input[type="text"],
+        #search-section input[type="submit"] {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 10px;
+        }
+
+        #search-section input[type="text"] {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #search-section input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #search-section input[type="submit"]:hover {
+            background-color: #444;
+        }
+
+        /* Schools list section */
+        #schools-list {
+            padding: 40px 20px;
+        }
+
+        #schools-list h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .school-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 10px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .school-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .school-item p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .school-item {
+                width: 90%;
+            }
+
+            #search-section input[type="text"] {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="driving_school.html">Driving Schools</a></li>
+                <li><a href="mock_test.html">Mock Driving Test</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section id="hero">
+            <h1>Search for Driving Schools</h1>
+            <p>Find the best driving schools near you.</p>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search-section">
+            <h2>Find Driving Schools</h2>
+            <form action="search_results.html" method="GET">
+                <input type="text" name="location" placeholder="Enter your location" required>
+                <input type="submit" value="Search">
+            </form>
+        </section>
+
+        <!-- Schools List Section -->
+        <section id="schools-list">
+            <h2>Available Driving Schools</h2>
+            <div class="school-item">
+                <h3>DriveSafe Academy</h3>
+                <p>Location: Nashik</p>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <p>Contact: 1234567890</p>
+            </div>
+            <div class="school-item">
+                <h3>EasyDrive School</h3>
+                <p>Location: Mumbai</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <p>Contact: 9876543210</p>
+            </div>
+            <div class="school-item">
+                <h3>Speedy Driving School</h3>
+                <p>Location: West End</p>
+                <p>Rating: ⭐⭐⭐</p>
+                <p>Contact: 0147852963</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 DriveRight. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the form element
+    const searchForm = document.querySelector('#search-section form');
+
+    // Add an event listener for form submission
+    searchForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the location value from the input
+        const location = searchForm.location.value;
+
+        // Display an alert or redirect based on the entered location
+        if (location) {
+            // Redirect to search results (you can customize this part)
+            window.location.href = `search_results.html?location=${encodeURIComponent(location)}`;
+        } else {
+            // Show an error message if location is empty (optional)
+            alert('Please enter a location.');
+        }
+    });
+});
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Driving Test</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Take our driving test to prepare for your real exam.">
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Font settings */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            padding: 1rem 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+
+        header nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Driving Test Section Styles */
+        #driving_test {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px; /* Set a max width for better readability */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center; /* Center-align the content */
+        }
+
+        #question {
+            font-size: 1.5rem; /* Increased font size for better readability */
+            margin-bottom: 20px;
+        }
+
+        #answers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .answer-button {
+            background-color: #5d9cec;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transition for button color */
+        }
+
+        .answer-button:hover {
+            background-color: #333;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        #hero {
+            background-color: #5d9cec;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Styles for the image sign */
+        #sign {
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+            margin: 20px auto; /* Center the image horizontally */
+            display: block; /* Ensure the image is a block element for centering */
+        }
+
+        #question-container {
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center align items */
+            text-align: center; /* Center the text */
+        }
+        #next-button{
+            margin: 20px auto;
+            height: 40px; 
+            width: fit-content;
+            padding: 10px 10px;
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h1>DriveRight</h1>
+        <p>Your trusted partner for finding the best driving schools and mock driving tests.</p>
+    </section>
+    <main>
+        <section id="driving_test">
+            <h2 style="text-align: center;">Mock Driving Test</h2>
+            <div id="question-container">
+                <img id="sign" src="" alt="Traffic Sign" style="display:none;"> <!-- Hidden by default -->
+                <div id="question"></div>
+                <div id="answers"></div>
+            </div>
+            <button id="next-button">Next Question</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DriveRight. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                question: "What does this sign mean?",
+                sign: "/resources/que_img_01.jpg", // Placeholder for the sign image
+                answers: ["Stop", "Yield", "Do Not Enter", "Speed Limit"],
+                correctAnswer: "Stop"
+            },
+            {
+                question: "When should you use your turn signal?",
+                sign: "/resources/que_img_02.jpg", // Placeholder for the sign image
+                answers: ["When turning", "Only when other cars are present", "When changing lanes", "Both A and C"],
+                correctAnswer: "Both A and C"
+            },
+            {
+                question: "What should you do at a red light?",
+                sign: "/resources/que_img_03.jpg", // Placeholder for the sign image
+                answers: ["Stop", "Speed up to clear the intersection", "Proceed with caution", "Ignore it"],
+                correctAnswer: "Stop"
+            },
+            {
+                question: "What is the legal blood alcohol limit for driving?",
+                sign: "/resources/que_img_04.jpg", // Placeholder for the sign image
+                answers: ["0.08%", "0.10%", "0.05%", "0.02%"],
+                correctAnswer: "0.08%"
+            },
+            {
+                question: "What should you do if your brakes fail?",
+                sign: "/resources/que_img_05.jpg", // Placeholder for the sign image
+                answers: ["Pump the brake pedal", "Shift into neutral", "Steer to safety", "All of the above"],
+                correctAnswer: "All of the above"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0; // Track score
+
+        const questionElement = document.getElementById('question');
+        const answersElement = document.getElementById('answers');
+        const nextButton = document.getElementById('next-button');
+        const signElement = document.getElementById('sign'); // Sign image element
+
+        function showQuestion(question) {
+            questionElement.textContent = question.question;
+            signElement.src = question.sign; // Set the sign image
+            signElement.style.display = 'block'; // Show the sign image
+            answersElement.innerHTML = '';
+
+            question.answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.textContent = answer;
+                button.classList.add('answer-button');
+                button.addEventListener('click', () => selectAnswer(answer, question.correctAnswer));
+                answersElement.appendChild(button);
+            });
+
+            nextButton.style.display = 'none'; // Hide next button initially
+        }
+
+        function selectAnswer(selectedAnswer, correctAnswer) {
+            if (selectedAnswer === correctAnswer) {
+                alert('Correct answer!');
+                score++;
+            } else {
+                alert('Wrong answer! The correct answer was: ' + correctAnswer);
+            }
+            nextButton.style.display = 'block'; // Show next button after answering
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion(questions[currentQuestionIndex]);
+            } else {
+                alert('You have completed the test! Your score: ' + score + '/' + questions.length);
+                // Reset the test
+                currentQuestionIndex = 0;
+                score = 0; // Reset score
+                showQuestion(questions[currentQuestionIndex]);
+            }
+        });
+
+        // Start the test
+        showQuestion(questions[currentQuestionIndex]);
+
+    </script>
+</body>
+
+</html>
